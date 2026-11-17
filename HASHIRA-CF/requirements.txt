@@ -1,0 +1,7 @@
+econml==0.16.0
+scikit-learn==1.5.2
+numpy
+pandas
+scipy
+matplotlib
+requests

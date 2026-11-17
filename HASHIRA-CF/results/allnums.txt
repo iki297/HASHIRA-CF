@@ -1,0 +1,74 @@
+scales: offline model-ready 34874, fit 22319, s_off=3.5794; deploy model-ready 336, fit 268, s_dep=2.1968
+
+==== OFFLINE (n=6975)
+  HASHIRA-CF         MAE   3.045 RMSE   4.286 MASE   0.851 R2    0.909
+  Linear DML         MAE   3.056 RMSE   4.301 MASE   0.854 R2    0.908
+  T-learner          MAE   3.065 RMSE   4.307 MASE   0.856 R2    0.908
+  Gradient boosting  MAE   3.075 RMSE   4.328 MASE   0.859 R2    0.907
+  Random forest      MAE   3.136 RMSE   4.392 MASE   0.876 R2    0.904
+  Ridge regression   MAE   3.157 RMSE   4.414 MASE   0.882 R2    0.903
+  Linear regression  MAE   3.158 RMSE   4.414 MASE   0.882 R2    0.903
+  DR-learner         MAE   3.165 RMSE   4.418 MASE   0.884 R2    0.903
+  Drift              MAE   3.947 RMSE   5.681 MASE   1.103 R2    0.840
+  vs T-learner          DM nom 0.00137 Holm 0.0028 | NW4 0.00221 Holm 0.00646 | Wilc 0.0255  medAE diff -0.027
+  vs Linear DML         DM nom 0.0454 Holm 0.0454 | NW4 0.0585 Holm 0.0585 | Wilc 0.26  medAE diff -0.010
+  vs DR-learner         DM nom 6.12e-25 Holm 4.29e-24 | NW4 4.41e-20 Holm 3.08e-19 | Wilc 3.73e-25  medAE diff -0.114
+  vs Gradient boosting  DM nom 0.000933 Holm 0.0028 | NW4 0.00215 Holm 0.00646 | Wilc 0.0248  medAE diff -0.009
+  vs Random forest      DM nom 3.3e-10 Holm 1.32e-09 | NW4 1.28e-09 Holm 5.13e-09 | Wilc 5.88e-08  medAE diff -0.093
+  vs Linear regression  DM nom 9.5e-14 Holm 5.7e-13 | NW4 1.6e-11 Holm 9.59e-11 | Wilc 3.18e-13  medAE diff -0.136
+  vs Ridge regression   DM nom 9.87e-14 Holm 5.7e-13 | NW4 1.67e-11 Holm 9.59e-11 | Wilc 3.8e-13  medAE diff -0.132
+  vs Drift              DM nom 1.63e-107 Holm 1.3e-106 | NW4 5.13e-108 Holm 4.1e-107 | Wilc 6.84e-89  medAE diff -0.826
+  r1 loss diff vs T: 0.044
+
+==== DEPLOYMENT (n=138)
+  HASHIRA-CF         MAE   1.634 RMSE   2.711 MASE   0.744 R2    0.901
+  T-learner          MAE   1.760 RMSE   2.575 MASE   0.801 R2    0.910
+  Drift              MAE   1.849 RMSE   3.594 MASE   0.842 R2    0.825
+  Random forest      MAE   1.898 RMSE   2.814 MASE   0.864 R2    0.893
+  Gradient boosting  MAE   2.358 RMSE   3.150 MASE   1.073 R2    0.866
+  Linear regression  MAE   5.924 RMSE   6.363 MASE   2.696 R2    0.453
+  Ridge regression   MAE  11.958 RMSE  12.197 MASE   5.444 R2   -1.012
+  Linear DML         MAE  39.097 RMSE  39.812 MASE  17.797 R2  -20.434
+  DR-learner         MAE  60.903 RMSE  61.365 MASE  27.724 R2  -49.923
+  vs T-learner          DM nom 0.251 Holm 0.503 | NW4 0.416 Holm 0.543 | Wilc 0.0168  medAE diff -0.310
+  vs Linear DML         DM nom 5.98e-103 Holm 4.19e-102 | NW4 4.11e-65 Holm 2.47e-64 | Wilc 2.16e-24  medAE diff -36.985
+  vs DR-learner         DM nom 8.17e-118 Holm 6.54e-117 | NW4 4.63e-82 Holm 3.71e-81 | Wilc 2.16e-24  medAE diff -60.985
+  vs Gradient boosting  DM nom 6.15e-06 Holm 2.46e-05 | NW4 0.00121 Holm 0.00484 | Wilc 1.77e-07  medAE diff -0.995
+  vs Random forest      DM nom 0.054 Holm 0.162 | NW4 0.171 Holm 0.512 | Wilc 0.00841  medAE diff -0.345
+  vs Linear regression  DM nom 3.86e-42 Holm 1.93e-41 | NW4 2.21e-25 Holm 1.1e-24 | Wilc 2.28e-22  medAE diff -4.680
+  vs Ridge regression   DM nom 2.31e-81 Holm 1.39e-80 | NW4 1.23e-66 Holm 8.62e-66 | Wilc 4.06e-24  medAE diff -10.990
+  vs Drift              DM nom 0.301 Holm 0.503 | NW4 0.271 Holm 0.543 | Wilc 0.815  medAE diff +0.015
+  r1 loss diff vs T: 0.345
+
+Offline band counts [np.int64(2247), np.int64(2744), np.int64(1984)]  deploy [np.int64(100), np.int64(38), np.int64(6)]
+  HASHIRA-CF         off  1.42  2.43  5.73 | dep  1.04  3.21
+  T-learner          off  1.44  2.47  5.72 | dep  1.29  3.00
+  Linear DML         off  1.47  2.44  5.70 | dep 38.40 40.93
+  DR-learner         off  1.64  2.54  5.76 | dep 61.60 59.07
+  Gradient boosting  off  1.47  2.45  5.76 | dep  1.94  3.45
+  Random forest      off  1.63  2.49  5.72 | dep  1.39  3.22
+  Linear regression  off  1.61  2.27  6.13 | dep  5.82  6.21
+  Ridge regression   off  1.61  2.27  6.13 | dep 11.83 12.29
+  Drift              off  2.57  3.31  6.39 | dep  1.57  2.58
+
+Ex-ante routine/upper n 121 17
+  routine HASHIRA-CF 1.26 | Drift 1.50 | T-learner 1.56 | Random forest 1.77 | Gradient boosting 2.20 | Linear regression 5.74 | Ridge regression 11.77 | Linear DML 37.98 | DR-learner 62.02
+     vs T-learner          DM 0.00106  W 0.000149
+     vs Linear DML         DM 7.04e-93  W 1.35e-21
+     vs DR-learner         DM 1.53e-117  W 1.35e-21
+     vs Gradient boosting  DM 4.92e-10  W 4.09e-09
+     vs Random forest      DM 3.21e-05  W 4.95e-05
+     vs Linear regression  DM 1.35e-39  W 6.89e-20
+     vs Ridge regression   DM 6.22e-75  W 2.28e-21
+     vs Drift              DM 0.139  W 0.281
+  upper Random forest 2.83 | T-learner 3.21 | Gradient boosting 3.50 | HASHIRA-CF 4.29 | Drift 4.35 | Linear regression 7.22 | Ridge regression 13.28 | Linear DML 47.07 | DR-learner 52.93
+     vs T-learner          DM 0.0629  W 0.0583
+     vs Linear DML         DM 1.59e-13  W 1.53e-05
+     vs DR-learner         DM 2.03e-11  W 1.53e-05
+     vs Gradient boosting  DM 0.245  W 0.678
+     vs Random forest      DM 0.0201  W 0.0305
+     vs Linear regression  DM 0.000155  W 0.00164
+     vs Ridge regression   DM 8.35e-09  W 3.05e-05
+     vs Drift              DM 0.961  W 0.132
+
+Signals >=2pp: {'HASHIRA-CF': 17, 'T-learner': 29, 'Linear DML': 138, 'DR-learner': 138, 'Gradient boosting': 51, 'Random forest': 33, 'Linear regression': 133, 'Ridge regression': 137, 'Drift': 38}

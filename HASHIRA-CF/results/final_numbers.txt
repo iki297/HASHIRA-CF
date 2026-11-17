@@ -1,0 +1,45 @@
+OFFLINE n 7083 s 3.609
+  HASHIRA-CF         3.099 4.364 0.859 0.904 p nan
+  Linear DML         3.107 4.364 0.861 0.904 p 0.203 W 0.49 medAEdiff +0.001
+  T-learner          3.114 4.384 0.863 0.904 p 0.0179 W 0.0477 medAEdiff -0.012
+  Gradient boosting  3.127 4.385 0.866 0.904 p 0.0179 W 0.0806 medAEdiff -0.020
+  Random forest      3.185 4.453 0.883 0.901 p 2.46e-08 W 3.41e-07 medAEdiff -0.065
+  Ridge regression   3.217 4.484 0.891 0.899 p 1.17e-12 W 3.16e-14 medAEdiff -0.129
+  Linear regression  3.217 4.484 0.891 0.899 p 1.17e-12 W 2.67e-14 medAEdiff -0.132
+  DR-learner         3.377 4.663 0.936 0.891 p 9.69e-42 W 2.3e-50 medAEdiff -0.248
+  Drift              4.069 5.825 1.127 0.830 p 4.76e-121 W 2.9e-103 medAEdiff -0.772
+OFFLINE bands n [2221, 2806, 2056]
+  HASHIRA-CF         1.38 2.45 5.84
+  Linear DML         1.49 2.46 5.74
+  T-learner          1.38 2.45 5.89
+  DR-learner         1.90 2.72 5.87
+  Drift              2.68 3.38 6.51
+  Gradient boosting  1.48 2.48 5.78
+  Random forest      1.64 2.51 5.78
+  Linear regression  1.63 2.30 6.19
+  Ridge regression   1.62 2.30 6.19
+range linear-form offline 1.4850147318741875 6.188214248372214
+HASHIRA offline band range [np.float64(1.38), np.float64(2.45), np.float64(5.84)]
+offline raw 35415 pass -40 rule 35415  min T -6.5
+offline min_leaf 75
+EXANTE routine n=100
+   Drift              1.34 p 0.693
+   HASHIRA-CF         1.38 p nan
+   T-learner          1.62 p 0.0603
+   Random forest      1.75 p 0.0433
+   Gradient boosting  2.26 p 1e-05
+   Linear regression  5.89 p 1.45e-34
+   Ridge regression   11.98 p 5.73e-71
+   Linear DML         38.43 p 1.74e-73
+   DR-learner         61.57 p 1.25e-84
+EXANTE upper n=38
+   T-learner          2.13 p 1
+   Random forest      2.28 p 1
+   HASHIRA-CF         2.30 p nan
+   Gradient boosting  2.62 p 0.925
+   Drift              3.20 p 0.779
+   Linear regression  6.00 p 1.13e-08
+   Ridge regression   11.89 p 3.06e-16
+   Linear DML         40.86 p 4.91e-29
+   DR-learner         59.14 p 2.35e-33
+top3 both: {'HASHIRA-CF', 'T-learner'}
